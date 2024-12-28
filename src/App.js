@@ -1,8 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
-
 function App() {
-  return <div className="App">hiiiiiiiiiiiiiiiiiiiii</div>;
+  return (
+    <div className="text-3xl font-bold text-green-800">
+      hellooo Everyone, let's build Movie GPT
+    </div>
+  );
 }
 
 export default App;

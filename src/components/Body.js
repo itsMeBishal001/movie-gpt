@@ -19,23 +19,18 @@ const Body = () => {
       element: <Browse />,
     },
   ]);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
-        dispatch(
-          addUser({
-            uid: uid,
-            email: email,
-            displayName: displayName,
-            photoURL: photoURL,
-          })
-        );
+        dispatch(addUser({ uid, email, displayName, photoURL }));
       } else {
         dispatch(removeUser());
       }
     });
-  }, []);
+  }, [dispatch]);
+
   return (
     <div>
       <RouterProvider router={appRouter} />
